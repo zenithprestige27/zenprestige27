@@ -1,142 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07111f">
-<title>Zenith Prestige | Free Fire Gaming Hub</title>
+<title>Zenith Prestige | Gaming Hub</title>
 <style>
-:root{--bg:#07111f;--panel:#0d1b2e;--panel2:#10233a;--blue:#24a8ff;--cyan:#7bd7ff;--text:#f4f8ff;--muted:#a9bad0;--line:#203954}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(ellipse at top right,#102b48 0%,var(--bg) 48%);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:rgba(7,17,31,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
-.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.7px}
-.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#42bdff,#1265c4);display:grid;place-items:center;color:#03101f;font-weight:1000;box-shadow:0 0 24px #168bdf44}
-.brand small{display:block;color:var(--cyan);font-size:.65rem;letter-spacing:2px}
-nav{display:flex;gap:20px;align-items:center;font-size:.92rem;color:var(--muted)}
-nav a:hover{color:white}
-.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;background:linear-gradient(100deg,#1685e7,#37c0ff);color:#03101f;font-weight:850;padding:12px 18px;border-radius:12px;border:0;cursor:pointer;box-shadow:0 8px 26px #1685e733}
-.btn.secondary{background:#112944;color:var(--text);border:1px solid #2d5379;box-shadow:none}
-.hero{padding:76px 0 52px;display:grid;grid-template-columns:1.2fr .8fr;gap:42px;align-items:center}
-.pill{display:inline-block;border:1px solid #28618a;color:var(--cyan);background:#0e2941;padding:6px 12px;border-radius:999px;font-size:.8rem;font-weight:750}
-h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.02;letter-spacing:-2px;margin:18px 0}
-.gradient{background:linear-gradient(90deg,#fff,#62caff 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--muted);font-size:1.08rem;max-width:610px}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.hero-card{padding:24px;border:1px solid #23415f;border-radius:24px;background:linear-gradient(145deg,#102742,#091625);box-shadow:0 25px 80px #0004;position:relative;overflow:hidden}
-.hero-card:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:#149dff20;filter:blur(10px);right:-70px;top:-70px}
-.hero-mark{font-size:5rem;font-weight:1000;line-height:1;color:#51bfff;text-shadow:0 0 35px #199dff66}
-.hero-card h3{font-size:1.35rem;margin:16px 0 4px}
-.hero-card p{color:var(--muted);margin:0}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
-.stat{background:#091828;border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
-.stat b{display:block;color:var(--cyan);font-size:1.2rem}.stat span{font-size:.76rem;color:var(--muted)}
-section{padding:42px 0}
-.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}
-h2{font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:0 0 8px;letter-spacing:-.7px}
-.sub{color:var(--muted);margin:0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:linear-gradient(150deg,#10243a,#0a1727);border:1px solid var(--line);border-radius:18px;padding:20px;transition:transform .2s,border-color .2s}
-.card:hover{transform:translateY(-3px);border-color:#3479ad}
-.card-icon{height:110px;border-radius:13px;background:radial-gradient(circle at 70% 25%,#1c85c7 0%,#12304c 40%,#0b1728 75%);display:grid;place-items:center;font-size:2.6rem;margin-bottom:15px}
-.tag{display:inline-block;color:var(--cyan);font-size:.75rem;background:#0d2a43;padding:4px 8px;border-radius:7px}
-.card h3{margin:10px 0 5px;font-size:1.12rem}.card p{color:var(--muted);font-size:.92rem;margin:0 0 15px}
-.card-foot{display:flex;justify-content:space-between;gap:10px;align-items:center;border-top:1px solid var(--line);padding-top:14px}
-.price{font-weight:900;color:#fff}
-.small-btn{border:1px solid #2c6a99;background:#102d49;color:#dff5ff;padding:8px 11px;border-radius:9px;font-weight:750;cursor:pointer}
-.feature{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.feature .card{padding:26px}
-.event-date{font-size:.78rem;color:var(--cyan);font-weight:800;letter-spacing:1px}
-.banner{background:linear-gradient(110deg,#103c60,#0c1d31);border:1px solid #28608a;border-radius:22px;padding:30px;display:flex;justify-content:space-between;gap:24px;align-items:center}
-.banner p{color:var(--muted);margin-bottom:0}
-footer{margin-top:35px;border-top:1px solid var(--line);padding:28px 0 38px;color:var(--muted);font-size:.88rem}
-.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.notice{font-size:.78rem;color:#92a8c0;margin-top:12px}
-.menu-btn{display:none}
-@media(max-width:780px){nav{display:none;position:absolute;top:70px;left:4%;right:4%;padding:18px;background:#0b1b2d;border:1px solid var(--line);border-radius:15px;flex-direction:column;align-items:stretch}nav.open{display:flex}.menu-btn{display:inline-flex}.nav>.btn{display:none}.hero{grid-template-columns:1fr;padding-top:48px}.grid{grid-template-columns:1fr 1fr}.feature{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.banner{align-items:start;flex-direction:column}}
-@media(max-width:520px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr 1fr}.hero{gap:25px}h1{letter-spacing:-1.3px}.card-icon{height:95px}}
-</style>
-</head>
-<body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#home" aria-label="Zenith Prestige home"><span class="logo">ZP</span><span>ZENITH PRESTIGE<small>GAMING HUB</small></span></a>
-    <nav id="navLinks"><a href="#store">Account Listings</a><a href="#community">Community</a><a href="#events">Tournaments</a><a href="#news">Gaming News</a></nav>
-    <a class="btn" href="#community">Join Community ↗</a>
-    <button class="small-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-  </div>
-</header>
-
+:root{--bg:#090909;--card:#171717;--line:#4a3a16;--blue:#d7ad42;--cyan:#f2d77a;--text:#fffdf7;--muted:#c5c0b4}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:radial-gradient(ellipse at 85% 0,#4b3915,transparent 35%),var(--bg);color:var(--text);font-family:system-ui,Arial,sans-serif;line-height:1.6}.wrap{width:min(1120px,92%);margin:auto}a{color:inherit;text-decoration:none}header{position:sticky;top:0;background:#090909ef;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:5}.nav{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:72px}.brand{font-weight:950;letter-spacing:.6px}.brand small{display:block;color:var(--cyan);font-size:.65rem;letter-spacing:2px}.logo{display:inline-grid;place-items:center;background:linear-gradient(140deg,#f2d77a,#a87916);color:#15110a;width:40px;height:40px;border-radius:12px;margin-right:8px}.links{display:flex;gap:18px;color:var(--muted);font-size:.9rem}.btn{display:inline-block;border:0;border-radius:11px;padding:10px 15px;background:linear-gradient(100deg,#b88719,#f2d77a);color:#15110a;font-weight:850;cursor:pointer}.ghost{background:#201b10;border:1px solid #6b5421;color:var(--text)}.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center;padding:70px 0 45px}.pill,.tag{display:inline-block;padding:5px 9px;border-radius:8px;background:#30250e;color:var(--cyan);font-size:.75rem;font-weight:850}.pill{border:1px solid #8a6a22;border-radius:99px}h1{font-size:clamp(2.7rem,7vw,5rem);line-height:1;letter-spacing:-2px;margin:20px 0}.shine{background:linear-gradient(90deg,#fffdf7,#f2d77a);color:transparent;background-clip:text}.muted,p{color:var(--muted)}.hero-box,.card,.banner{border:1px solid var(--line);background:linear-gradient(145deg,#242018,#111111);border-radius:20px;padding:22px}.hero-box{box-shadow:0 20px 60px #0005}.big{font-size:7rem;font-weight:1000;line-height:1;color:#e0b94f;text-shadow:0 0 35px #d5a62f44}.stats,.grid,.two{display:grid;gap:15px}.stats{grid-template-columns:repeat(3,1fr);margin-top:20px}.stats div{text-align:center;background:#111111;border:1px solid var(--line);border-radius:12px;padding:10px;font-size:.75rem;color:var(--muted)}.stats b{display:block;color:var(--cyan);font-size:1.1rem}section{padding:38px 0}.heading{margin-bottom:20px}.heading h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:9px 0 4px;line-height:1.15}.heading p{margin:0}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.two{grid-template-columns:1fr 1fr}.card{transition:.2s}.card:hover{transform:translateY(-3px);border-color:#c8a03a}.visual{height:100px;display:grid;place-items:center;border-radius:13px;background:radial-gradient(circle at 70% 20%,#8a681d,#30250e 55%,#111111);font-size:2.5rem;margin-bottom:14px}.card h3{margin:10px 0 5px}.card p{font-size:.92rem}.row{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid var(--line);padding-top:12px}.tools{display:flex;gap:10px;margin-bottom:16px}.field{background:#171717;border:1px solid #6b5421;color:white;border-radius:10px;padding:10px}.search{flex:1;min-width:0}.banner{display:flex;justify-content:space-between;align-items:center;gap:20px;background:linear-gradient(110deg,#3a2b0d,#171717)}.banner h2{margin:8px 0}.note{font-size:.78rem;color:#91a8c0}.event-date{color:var(--cyan);font-size:.8rem;font-weight:800}footer{border-top:1px solid var(--line);margin-top:30px;padding:25px 0;color:var(--muted);font-size:.85rem}.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.empty{display:none;color:var(--muted);padding:15px;text-align:center}.cart-banner{margin-bottom:15px}.cart-card{background:linear-gradient(145deg,#211c10,#111)}.cart-line{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.cart-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.cart-total{display:flex;justify-content:space-between;padding:18px 0;font-size:1.1rem}.cart-total strong:last-child{color:var(--cyan)}.cart-items{margin-bottom:5px}.remove{color:#ffdbdb;border-color:#744444}.cart-card #checkout{width:100%}
+@media(max-width:760px){.links{display:none;position:absolute;top:68px;left:4%;right:4%;background:#171717;border:1px solid var(--line);border-radius:12px;padding:15px;flex-direction:column}.links.open{display:flex}.hero{grid-template-columns:1fr;padding-top:45px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.banner{align-items:flex-start;flex-direction:column}.heading{margin-bottom:17px}}
+@media(max-width:520px){.cart-line{align-items:flex-start;flex-direction:column}.grid,.two{grid-template-columns:1fr}.stats{gap:5px}.stats div{font-size:.68rem}.hero{gap:22px}h1{letter-spacing:-1px}}
+</style></head><body>
+<header><div class="wrap nav"><a class="brand" href="#home"><span class="logo">ZP</span>ZENITH PRESTIGE<small>GAMING HUB</small></a><nav class="links" id="links"><a href="#store">Store</a><a href="#community">Community</a><a href="#events">Tournaments</a><a href="#news">Gaming News</a></nav><button class="btn ghost" id="menu">☰</button></div></header>
 <main>
-<section class="wrap hero" id="home">
-  <div>
-    <span class="pill">⚡ YOUR NEXT LEVEL STARTS HERE</span>
-    <h1>PLAY SMART.<br><span class="gradient">RISE HIGHER.</span></h1>
-    <p class="lead">Welcome to Zenith Prestige, a home for Free Fire players, gaming updates, community action and tournament announcements.</p>
-    <div class="actions"><a class="btn" href="#store">Explore Listings ↓</a><a class="btn secondary" href="#events">View Tournaments</a></div>
-    <p class="notice">Community-first gaming hub. Listings shown below are demo examples.</p>
-  </div>
-  <div class="hero-card">
-    <div class="hero-mark">ZP</div>
-    <h3>Built for the squad.</h3>
-    <p>Find the updates, meet the community and keep your next match on the radar.</p>
-    <div class="stats"><div class="stat"><b>01</b><span>One Community</span></div><div class="stat"><b>24/7</b><span>Gaming Spirit</span></div><div class="stat"><b>FF</b><span>Battle Ready</span></div></div>
-  </div>
-</section>
-
-<section class="wrap" id="store">
-  <div class="section-head"><div><span class="pill">THE LISTINGS</span><h2>Gaming Account Store</h2><p class="sub">Browse sample listings and enquire through WhatsApp.</p></div><span class="tag">DEMO LISTINGS</span></div>
-  <div class="grid">
-    <article class="card"><div class="card-icon">🎮</div><span class="tag">STARTER</span><h3>Starter Profile</h3><p>A sample listing card for account details, rank and included items.</p><div class="card-foot"><span class="price">Price: Ask us</span><button class="small-btn enquire" data-item="Starter Profile">Enquire ↗</button></div></article>
-    <article class="card"><div class="card-icon">⚡</div><span class="tag">RANKED</span><h3>Ranked Profile</h3><p>Add accurate rank information, available items and other details here.</p><div class="card-foot"><span class="price">Price: Ask us</span><button class="small-btn enquire" data-item="Ranked Profile">Enquire ↗</button></div></article>
-    <article class="card"><div class="card-icon">👑</div><span class="tag">COLLECTOR</span><h3>Collector Profile</h3><p>Showcase a sample listing for collectors and experienced players.</p><div class="card-foot"><span class="price">Price: Ask us</span><button class="small-btn enquire" data-item="Collector Profile">Enquire ↗</button></div></article>
-  </div>
-  <p class="notice">Before publishing real listings, check the game's current rules. Do not post passwords, recovery codes or private account information. Account transfers may be restricted by the game publisher.</p>
-</section>
-
-<section class="wrap" id="community">
-  <div class="banner"><div><span class="pill">FIND YOUR SQUAD</span><h2>Join the Zenith community</h2><p>Get channel announcements, community updates and gaming discussions in one place.</p></div><a class="btn whatsapp" href="#" target="_blank" rel="noopener">Join WhatsApp ↗</a></div>
-  <p class="notice">The WhatsApp button needs your channel link before the site goes live.</p>
-</section>
-
-<section class="wrap" id="events">
-  <div class="section-head"><div><span class="pill">COMPETE & CONNECT</span><h2>Tournaments & Events</h2><p class="sub">Use these cards to announce upcoming custom rooms and competitions.</p></div></div>
-  <div class="feature">
-    <article class="card"><div class="event-date">UPCOMING EVENT</div><h3>Zenith Squad Showdown</h3><p>Post the confirmed date, start time, entry requirements and rules here. Keep event details updated so players know what to expect.</p><a class="small-btn whatsapp" href="#" target="_blank" rel="noopener">Ask about events ↗</a></article>
-    <article class="card"><div class="event-date">COMMUNITY MATCH</div><h3>Weekend Custom Room</h3><p>Use this space for custom-room announcements, team recruitment and community match highlights.</p><a class="small-btn whatsapp" href="#" target="_blank" rel="noopener">Get updates ↗</a></article>
-  </div>
-</section>
-
-<section class="wrap" id="news">
-  <div class="section-head"><div><span class="pill">FROM THE LOBBY</span><h2>Gaming News & Updates</h2><p class="sub">Starter posts you can replace with verified updates.</p></div></div>
-  <div class="grid">
-    <article class="card"><span class="tag">COMMUNITY</span><h3>Welcome to Zenith Prestige</h3><p>Keep an eye on this page for community notices, team updates and upcoming activities.</p></article>
-    <article class="card"><span class="tag">TOURNAMENTS</span><h3>Play fair, play together</h3><p>Read the rules before joining an event, respect other players and confirm match details with the organiser.</p></article>
-    <article class="card"><span class="tag">GAME UPDATES</span><h3>Stay in the loop</h3><p>Replace this card with a verified game update and include the date and official source.</p></article>
-  </div>
-</section>
-</main>
-
-<footer><div class="wrap footer-row"><div><strong style="color:#f4f8ff">ZENITH PRESTIGE</strong><br>Play smart. Rise higher.</div><div>Gaming community • Listings • Events</div><div>© <span id="year"></span> Zenith Prestige</div></div><div class="wrap notice">Fan community website. Not affiliated with or endorsed by Garena. Use only accurate listings and follow the game's current terms.</div></footer>
+<section class="wrap hero" id="home"><div><span class="pill">⚡ THE NEXT MATCH STARTS HERE</span><h1>PLAY SMART.<br><span class="shine">RISE HIGHER.</span></h1><p>Welcome to Zenith Prestige, a gaming hub for community updates, tournament announcements, gaming news and store enquiries.</p><p><a class="btn" href="#store">Explore store ↓</a> <a class="btn ghost" href="#events">View events</a></p><div class="note">Demo listings are shown until you replace them with your real content.</div></div><aside class="hero-box"><div class="big">ZP</div><h2>Find your next level.</h2><p>One hub for the squad, updates and competition.</p><div class="stats"><div><b>STORE</b>Listings</div><div><b>EVENTS</b>Tournaments</div><div><b>SQUAD</b>Community</div></div></aside></section>
+<section class="wrap" id="store"><div class="heading"><span class="pill">THE LISTINGS</span><h2>Zenith Prestige Store</h2><p>Accounts, top-ups, gaming services and tournament entries. Add items to your cart, then send your order through WhatsApp.</p></div><div class="tools"><input id="search" class="field search" placeholder="Search products…" aria-label="Search products"><select id="filter" class="field" aria-label="Filter products"><option value="all">All categories</option><option value="accounts">Free Fire Accounts</option><option value="topups">Diamonds & Top-Ups</option><option value="services">Gaming Services</option><option value="tournaments">Tournament Entry</option></select></div><div class="grid" id="products"></div><div class="empty" id="empty">No products match your search.</div><p class="note">Sample listings are placeholders. Confirm prices and availability before publishing. Check the game's rules before advertising account transfers. Never share passwords or recovery codes.</p></section>
+<section class="wrap" id="cart"><div class="banner cart-banner"><div><span class="pill">YOUR PICKS</span><h2>Shopping Cart <span id="cartCount" class="tag">0 items</span></h2><p>Review your order before sending it to Zenith Prestige on WhatsApp.</p></div><button class="btn ghost" id="clearCart" type="button">Clear cart</button></div><div class="card cart-card"><div id="cartItems" class="cart-items"><p class="muted">Your cart is empty. Add something from the store above.</p></div><div class="cart-total"><strong>Total</strong><strong id="cartTotal">₦0</strong></div><button class="btn" id="checkout" type="button">Order via WhatsApp ↗</button><p class="note">This cart prepares your order message. Payment and stock confirmation happen directly with the store.</p></div></section>
+<section class="wrap" id="community"><div class="banner"><div><span class="pill">FIND YOUR SQUAD</span><h2>Join the Zenith community</h2><p>Community announcements, match updates and gaming discussions.</p></div><button class="btn" data-link="channel">Join WhatsApp ↗</button></div><p class="note">Add your actual channel link in the CONFIG section near the bottom of index.html.</p></section>
+<section class="wrap" id="events"><div class="heading"><span class="pill">COMPETE & CONNECT</span><h2>Tournaments & Events</h2><p>Update these cards with confirmed dates, rules and registration details.</p></div><div class="two" id="eventCards"></div></section>
+<section class="wrap" id="news"><div class="heading"><span class="pill">FROM THE LOBBY</span><h2>Gaming News & Updates</h2><p>Replace sample posts with verified updates.</p></div><div class="grid" id="newsCards"></div></section>
+</main><footer><div class="wrap foot"><div><b style="color:white">ZENITH PRESTIGE</b><br>Play smart. Rise higher.</div><div>Gaming store · Community · Events</div><div>© <span id="year"></span> Zenith Prestige</div></div><div class="wrap note">Fan community website. Not affiliated with or endorsed by Garena.</div></footer>
 <script>
-const WHATSAPP_CHANNEL_URL = "https://whatsapp.com/channel/0029VbEVxP55a243CQwr8I2j";
-const WHATSAPP_CHAT_URL = "Message أديبايو 𓂀 عبدُ الرَّحْمٰن on WhatsApp. https://wa.me/2348026494505";
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("navLinks").classList.toggle("open"));
-document.querySelectorAll(".whatsapp").forEach(a=>a.addEventListener("click",e=>{
-  const target = a.textContent.toLowerCase().includes("join whatsapp") ? WHATSAPP_CHANNEL_URL : WHATSAPP_CHAT_URL;
-  if(target.startsWith("PASTE_")){e.preventDefault();alert("Add your WhatsApp channel or chat link in the website file first.");}
-  else a.href=target;
-}));
-document.querySelectorAll(".enquire").forEach(b=>b.addEventListener("click",()=>{
-  if(WHATSAPP_CHAT_URL.startsWith("PASTE_")){alert("Add your WhatsApp chat link in the website file first.");return;}
-  const msg=encodeURIComponent("Hi Zenith Prestige, I'm interested in the "+b.dataset.item+" listing. Can you share the details?");
-  window.open(WHATSAPP_CHAT_URL+(WHATSAPP_CHAT_URL.includes("?")?"&":"?")+"text="+msg,"_blank","noopener");
-}));
-</script>
-</body>
-</html>
+/* QUICK EDIT: edit PRODUCTS, EVENTS and NEWS below. */
+const CONFIG={channel:"https://whatsapp.com/channel/0029VbEVxP55a243CQwr8I2j",chat:"https://wa.me/2348026494505"};
+const PRODUCTS=[
+{id:"ff-account-1",name:"Starter Free Fire Account",category:"accounts",icon:"🎮",price:0,priceLabel:"Price to be confirmed",availability:"Check availability",description:"Demo listing. Add accurate level, rank and included items."},
+{id:"ff-account-2",name:"Collector Free Fire Account",category:"accounts",icon:"👑",price:0,priceLabel:"Price to be confirmed",availability:"Check availability",description:"Demo listing. Add verified details and available cosmetics."},
+{id:"diamonds-1",name:"Diamond Top-Up",category:"topups",icon:"💎",price:0,priceLabel:"Price to be confirmed",availability:"Check availability",description:"Choose your preferred diamond package when enquiring."},
+{id:"service-1",name:"Gameplay Coaching",category:"services",icon:"🎯",price:0,priceLabel:"Price to be confirmed",availability:"By arrangement",description:"Practice tips and gameplay guidance. Confirm the service details first."},
+{id:"tournament-1",name:"Tournament Entry",category:"tournaments",icon:"🏆",price:0,priceLabel:"Price to be confirmed",availability:"Upcoming events only",description:"Ask for the confirmed event date, rules and entry details."}
+];
+let cart=[];
+function money(n){return new Intl.NumberFormat("en-NG",{style:"currency",currency:"NGN",maximumFractionDigits:0}).format(n||0)}
+const EVENTS=[
+{label:"UPCOMING EVENT",date:"Date to be announced",title:"Zenith Squad Showdown",description:"Add confirmed date, start time, rules and registration details."},
+{label:"COMMUNITY MATCH",date:"Schedule to be announced",title:"Weekend Custom Room",description:"Share custom-room notices, team recruitment and match highlights."}
+];
+const NEWS=[
+{tag:"COMMUNITY",title:"Welcome to Zenith Prestige",description:"Watch this space for community notices and upcoming activities.",date:"Community notice"},
+{tag:"TOURNAMENTS",title:"Play fair, play together",description:"Review event rules and confirm details with the organiser.",date:"Player reminder"},
+{tag:"GAME UPDATES",title:"Stay in the loop",description:"Replace with a verified update and official source.",date:"Add publication date"}
+];
+const $=id=>document.getElementById(id);
+function safe(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function toast(s){alert(s)}
+function whats(type,msg){let url=type==="channel"?CONFIG.channel:CONFIG.chat;if(!/^https:\/\//i.test(url)){toast("Add your real WhatsApp "+(type==="channel"?"channel":"chat")+" link in CONFIG first.");return}if(type!=="channel")url+=(url.includes("?")?"&":"?")+"text="+encodeURIComponent(msg||"Hi Zenith Prestige, I'd like more information.");window.open(url,"_blank","noopener")}
+function renderProducts(){let q=$("search").value.toLowerCase().trim(),f=$("filter").value;let list=PRODUCTS.filter(p=>(f==="all"||p.category===f)&&[p.name,p.category,p.description,p.availability].join(" ").toLowerCase().includes(q));$("products").innerHTML=list.map(p=>`<article class="card"><div class="visual">${safe(p.icon)}</div><span class="tag">${safe(({accounts:"FREE FIRE ACCOUNTS",topups:"DIAMONDS & TOP-UPS",services:"GAMING SERVICES",tournaments:"TOURNAMENT ENTRY"})[p.category])}</span><h3>${safe(p.name)}</h3><p>${safe(p.description)}</p><p class="note">${safe(p.availability)}</p><div class="row"><b>${safe(p.priceLabel||money(p.price))}</b><button class="btn" data-add="${safe(p.id)}" type="button">Add to cart +</button></div></article>`).join("");$("empty").style.display=list.length?"none":"block"}
+function renderCart(){let count=cart.reduce((n,i)=>n+i.qty,0);$("cartCount").textContent=count+" item"+(count===1?"":"s");$("cartItems").innerHTML=cart.length?cart.map(i=>`<div class="cart-line"><div><strong>${safe(i.name)}</strong><div class="note">${safe(i.priceLabel||money(i.price))}</div></div><div class="cart-controls"><button class="small-btn" data-qty="${safe(i.id)}" data-change="-1" aria-label="Decrease quantity">−</button><span>${i.qty}</span><button class="small-btn" data-qty="${safe(i.id)}" data-change="1" aria-label="Increase quantity">+</button><button class="small-btn remove" data-remove="${safe(i.id)}">Remove</button></div></div>`).join(""):'<p class="muted">Your cart is empty. Add something from the store above.</p>';let total=cart.reduce((n,i)=>n+(Number(i.price)||0)*i.qty,0);$("cartTotal").textContent=cart.some(i=>!Number(i.price))?"Price to be confirmed":money(total)}
+function addToCart(id){let p=PRODUCTS.find(x=>x.id===id);if(!p)return;let found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({...p,qty:1});renderCart();toast(p.name+" added to cart.")}
+function renderEvents(){$("eventCards").innerHTML=EVENTS.map(e=>`<article class="card"><span class="event-date">${safe(e.label)} · ${safe(e.date)}</span><h3>${safe(e.title)}</h3><p>${safe(e.description)}</p><button class="btn ghost" data-event="${safe(e.title)}">Ask about event ↗</button></article>`).join("")}
+function renderNews(){$("newsCards").innerHTML=NEWS.map(n=>`<article class="card"><span class="tag">${safe(n.tag)}</span><h3>${safe(n.title)}</h3><p>${safe(n.description)}</p><span class="note">${safe(n.date)}</span></article>`).join("")}
+$("year").textContent=new Date().getFullYear();$("menu").onclick=()=>$ ("links").classList.toggle("open");$("search").oninput=renderProducts;$("filter").onchange=renderProducts;$("clearCart").onclick=()=>{cart=[];renderCart()};$("checkout").onclick=()=>{if(!cart.length){toast("Your cart is empty. Add a product first.");return}let lines=cart.map(i=>`• ${i.name} x${i.qty} (${i.priceLabel||money(i.price)})`);let total=cart.reduce((n,i)=>n+(Number(i.price)||0)*i.qty,0);let totalText=cart.some(i=>!Number(i.price))?"To be confirmed":money(total);let msg="Hi Zenith Prestige! I'd like to place this order:\n\n"+lines.join("\n")+"\n\nEstimated total: "+totalText+"\nPlease confirm final prices and availability.";whats("chat",msg)};
+document.addEventListener("click",e=>{let add=e.target.closest("[data-add]");if(add)addToCart(add.dataset.add);let qty=e.target.closest("[data-qty]");if(qty){let item=cart.find(i=>i.id===qty.dataset.qty);if(item){item.qty+=Number(qty.dataset.change);if(item.qty<=0)cart=cart.filter(i=>i.id!==item.id);renderCart()}}let remove=e.target.closest("[data-remove]");if(remove){cart=cart.filter(i=>i.id!==remove.dataset.remove);renderCart()}let ev=e.target.closest("[data-event]");if(ev)whats("chat","Hi Zenith Prestige, please share details about "+ev.dataset.event+".");let l=e.target.closest("[data-link]");if(l){e.preventDefault();whats(l.dataset.link)}if(e.target.closest("#links a"))$("links").classList.remove("open")});
+renderProducts();renderCart();renderEvents();renderNews();
+</script></body></html>
